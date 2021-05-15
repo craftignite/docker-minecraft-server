@@ -3,7 +3,7 @@ version: '3'
 
 services:
   minecraft:
-    image: itzg/minecraft-server
+    image: craftignite/minecraft-server
     ports:
       - "25565:25565"
     volumes:
