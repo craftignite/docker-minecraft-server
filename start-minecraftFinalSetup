@@ -212,6 +212,11 @@ EOF
     "${FTB_SERVER_START}"
   )
 
+  if isTrue ${SETUP_ONLY:=false}; then
+    echo "SETUP_ONLY: ${finalArgs[@]}"
+    exit
+  fi
+
   if isTrue ${DEBUG_EXEC}; then
     set -x
   fi
@@ -236,6 +241,11 @@ else
     "$@" $EXTRA_ARGS
   )
 
+  if isTrue ${SETUP_ONLY:=false}; then
+    echo "SETUP_ONLY: java ${finalArgs[@]}"
+    exit
+  fi
+
   if isTrue ${DEBUG_EXEC}; then
     set -x
   fi
@@ -246,3 +256,4 @@ else
     exec mc-server-runner ${bootstrapArgs} ${mcServerRunnerArgs} java "${finalArgs[@]}"
   fi
 fi
+
