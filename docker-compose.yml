@@ -10,7 +10,11 @@ services:
       - "mc:/data"
     environment:
       EULA: "TRUE"
+      VERSION: "1.16"
     restart: always
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
 
 volumes:
   mc: {}
