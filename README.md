@@ -119,7 +119,7 @@ By default, the container will download the latest version of the "vanilla" [Min
       * [PVP Mode](#pvp-mode)
       * [Level Type and Generator Settings](#level-type-and-generator-settings)
       * [Custom Server Resource Pack](#custom-server-resource-pack)
-      * [World Save Name](#world-save-name)
+      * [Level / World Save Name](#level--world-save-name)
       * [Online mode](#online-mode)
       * [Allow flight](#allow-flight)
       * [Other server property mappings](#other-server-property-mappings)
@@ -145,7 +145,7 @@ By default, the container will download the latest version of the "vanilla" [Min
       * [Enabling Autopause](#enabling-autopause)
    * [Running on RaspberryPi](#running-on-raspberrypi)
 
-<!-- Added by: runner, at: Mon Jun 28 12:13:57 UTC 2021 -->
+<!-- Added by: runner, at: Sun Jul  4 19:53:56 UTC 2021 -->
 
 <!--te-->
 
@@ -1010,15 +1010,17 @@ You can set a link to a custom resource pack and set it's checksum using the `RE
 
 **NOTE:** `:` and `=` must be escaped using `\`. The checksum plain-text hexadecimal.
 
-### World Save Name
+### Level / World Save Name
 
 You can either switch between world saves or run multiple containers with different saves by using the `LEVEL` option,
 where the default is "world":
 
     docker run -d -e LEVEL=bonus ...
 
-**NOTE:** if running multiple containers be sure to either specify a different `-v` host directory for each
+> **NOTE:** if running multiple containers be sure to either specify a different `-v` host directory for each
 `LEVEL` in use or don't use `-v` and the container's filesystem will keep things encapsulated.
+
+> **INFO** Refer to the [data directory](#data-directory) section for a visual description of where the `$LEVEL` directory is situated.
 
 ### Online mode
 
