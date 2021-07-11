@@ -20,7 +20,6 @@ RUN apt-get update \
     unzip \
     knockd \
     ttf-dejavu \
-	iptables \
     && apt-get clean
 
 RUN addgroup --gid 1000 minecraft \
@@ -67,7 +66,7 @@ RUN easy-add --var os=${TARGETOS} --var arch=${TARGETARCH}${TARGETVARIANT} \
 
 # Install craftignite/craftignite-core
 RUN easy-add --var os=${TARGETOS} --var arch=${TARGETARCH}${TARGETVARIANT} \
- --var version=0.1.1 --var app=craftignite-core --file {{.app}} \
+ --var version=0.2.0 --var app=craftignite-core --file {{.app}} \
  --from https://github.com/craftignite/{{.app}}/releases/download/{{.version}}/{{.app}}_{{.version}}_{{.os}}_{{.arch}}.tar.gz
 
 COPY mcstatus /usr/local/bin
