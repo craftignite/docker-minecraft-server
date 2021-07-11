@@ -55,7 +55,7 @@ function customizeServerProps {
 
   setServerProp "server-name" "$SERVER_NAME"
   setServerProp "server-ip" "$SERVER_IP"
-  setServerProp "server-port" "$SERVER_PORT"
+  setServerProp "server-port" "$INTERNAL_SERVER_PORT"
   setServerProp "motd" "$MOTD"
   setServerProp "allow-nether" "$ALLOW_NETHER"
   setServerProp "announce-player-achievements" "$ANNOUNCE_PLAYER_ACHIEVEMENTS"
