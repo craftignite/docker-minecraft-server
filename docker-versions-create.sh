@@ -4,11 +4,7 @@
 branches_list=(
   'java8'
   'java8-multiarch'
-  'java8-openj9'
-  'java11'
-  'java11-openj9'
   'java16'
-  'java16-openj9'
   'multiarch-latest'
   )
 
@@ -76,7 +72,7 @@ for branch in "${branches_list[@]}"; do
     exit 1
   else
     echo "Branch $branch found. Working with it."
-    git checkout "$branch" || { echo "Can't checkout into the branch. Don't know the cause."; \
+    git checkout $branch || { echo "Can't checkout into the branch. Don't know the cause."; \
       exit 1; }
     proceed='False'
     while [[ "$proceed" == "False" ]]; do
@@ -121,7 +117,7 @@ EOL
           git checkout master
           git fetch --all
           git pull -a
-          git checkout "$branch"
+          git checkout $branch
           continue
         else
           break
