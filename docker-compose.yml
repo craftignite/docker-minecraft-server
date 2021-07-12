@@ -3,13 +3,14 @@ version: '3'
 
 services:
   minecraft:
-    image: itzg/minecraft-server
+    image: craftignite/minecraft-server
     ports:
       - "25565:25565"
     volumes:
       - "mc:/data"
     environment:
       EULA: "TRUE"
+      VERSION: "1.16.5"
     restart: always
 
 volumes:
