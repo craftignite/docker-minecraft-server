@@ -38,6 +38,9 @@ if [ -n "$ICON" ]; then
     fi
 fi
 
+# Mitigate CVE-2021-44228
+JVM_OPTS="-Dlog4j2.formatMsgNoLookups=true ${JVM_OPTS}"
+
 if isTrue ${ENABLE_ROLLING_LOGS:-false}; then
   # Set up log configuration
   LOGFILE="/data/log4j2.xml"
